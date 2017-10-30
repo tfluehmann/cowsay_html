@@ -1,7 +1,7 @@
 FROM ruby
 
 ENV APP_HOME /app
-ENV HOME /root
+
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 COPY .  $APP_HOME/
@@ -10,4 +10,4 @@ RUN gem install bundler
 RUN bundle install
 ENV PORT 8080 
 EXPOSE 8080
-CMD ruby $APP_HOME/lib/start.rb
+CMD rackup -P /tmp/rack.pid --host 0.0.0.0 --port $PORT
