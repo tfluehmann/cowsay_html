@@ -1,10 +1,19 @@
-FROM ruby
+FROM ruby:2.5.0-alpine3.7
+
+ENV BUILD_PACKAGES bash curl-dev ruby-dev build-base
+ENV RUBY_PACKAGES ruby ruby-io-console ruby-bundler ruby-json
+
+RUN apk update && \
+    apk upgrade && \
+    apk add $BUILD_PACKAGES && \
+    apk add $RUBY_PACKAGES && \
+    rm -rf /var/cache/apk/*
 
 ENV APP_HOME /app
 
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
-COPY .  $APP_HOME/
+COPY . $APP_HOME/
 
 RUN gem install bundler
 RUN bundle install

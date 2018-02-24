@@ -6,17 +6,17 @@ GEM
     htmlentities (4.3.4)
     json (1.8.6)
     mime-types (1.25.1)
-    mustermann (1.0.1)
-    rack (2.0.3)
-    rack-protection (2.0.0)
+    mustermann (1.0.2)
+    rack (2.0.4)
+    rack-protection (2.0.1)
       rack
     rest-client (1.6.9)
       mime-types (~> 1.16)
     ruby_cowsay (0.1.2)
-    sinatra (2.0.0)
+    sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.0)
+      rack-protection (= 2.0.1)
       tilt (~> 2.0)
     tilt (2.0.8)
     unirest (1.1.2)
@@ -35,4 +35,4 @@ DEPENDENCIES
   unirest
 
 BUNDLED WITH
-   1.15.3
+   1.16.1
