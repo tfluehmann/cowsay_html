@@ -19,4 +19,4 @@ RUN gem install bundler
 RUN bundle install
 ENV PORT 8080
 EXPOSE 8080
-CMD rackup -P /tmp/rack.pid --host 0.0.0.0 --port $PORT
+CMD bundle exec rackup -P /tmp/rack.pid --host 0.0.0.0 --port $PORT
